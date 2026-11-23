@@ -1,4 +1,4 @@
-pipeline {
+﻿pipeline {
     agent any
     environment {
         IMAGE_NAME = "ernestbagirishya23/ernest:v6"
@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Ernestbagirishya/ernest_cat.git'
+                checkout scm
             }
         }
         stage('Build Docker Image') {
