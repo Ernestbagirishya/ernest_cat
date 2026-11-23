@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ernest-juiceshop-deployment
+  labels:
+    app: juiceshop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: juiceshop
+  template:
+    metadata:
+      labels:
+        app: juiceshop
+    spec:
+      containers:
+      - name: juiceshop
+        image: ernestbagirishya23/ernest:v6
+        ports:
+        - containerPort: 3000
